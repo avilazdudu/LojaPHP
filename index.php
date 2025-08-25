@@ -1,139 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css "href="./style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Layout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body class="container-fluid flex-wrap d-flex justify-content-center">
+<body class="container-fluid vh-100 m-0 p-0 d-flex flex-column">
 
-<?php
-        $products = [
-            [
-                "name" => "Ouro Branco",
-                "priceNormal" => 45.90,
-                "priceText" => "R$ 45.90",
-                "image" => "./img/OuroBranco.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Sonho de Valsa",
-                "priceNormal" => 39.99,
-                "priceText" => "R$ 39.99",
-                "image" => "./img/SonhoDeValsa.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Ferrero Rocher",
-                "priceNormal" => 54.90,
-                "priceText" => "R$ 54.90",
-                "image" => "./img/FerreroRocher.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Galak Nestle",
-                "priceNormal" => 44.90,
-                "priceText" => "R$ 44.90",
-                "image" => "./img/Nestle.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Bis Lacta",
-                "priceNormal" => 60.99,
-                "priceText" => "R$ 60.99",
-                "image" => "./img/Lacta.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Confeitos",
-                "priceNormal" => 65.90,
-                "priceText" => "R$ 65.90",
-                "image" => "./img/Confetes.png",
-                "quantity" => 0,
-                "category" => "chocolate"
-            ],
-            [
-                "name" => "Smartphone",
-                "priceNormal" => 299.99,
-                "priceText" => "R$ 299.99",
-                "image" => "./img/Celular.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ],
-            [
-                "name" => "Earphones",
-                "priceNormal" => 99.99,
-                "priceText" => "R$ 99.99",
-                "image" => "./img/Bluetooth.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ],
-            [
-                "name" => "Headset",
-                "priceNormal" => 199.99,
-                "priceText" => "R$ 199.99",
-                "image" => "./img/Headset.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ],
-            [
-                "name" => "Laptop",
-                "priceNormal" => 499.99,
-                "priceText" => "R$ 499.99",
-                "image" => "./img/Laptop.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ],
-            [
-                "name" => "Smartwatch",
-                "priceNormal" => 149.99,
-                "priceText" => "R$ 149.99",
-                "image" => "./img/Smartwatch.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ],
-            [
-                "name" => "PS5",
-                "priceNormal" => 999.99,
-                "priceText" => "R$ 999.99",
-                "image" => "./img/PS5.png",
-                "quantity" => 0,
-                "category" => "electronics",
-            ]
-        ];
+  <header class="d-flex bg-primary justify-content-around align-items-center">
+    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+    <h1 class="display-3">Miguel Naiba</h1>
+    <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+  </header>
 
-        usort($products, function($a, $b) {
-            return strcasecmp($a['name'], $b['name']);
-        });
+  <main class="d-flex flex-column align-items-center py-3">
+    <div class="d-flex justify-content-center align-items-center py-4">
+      <h2 class="display-4">Produtos</h2>
+    </div>
+    <div class="row w-100 d-flex justify-content-around align-items-center">
+      <div class="col-3 d-flex justify-content-center align-items-center flex-column p-3 bg-primary product-card" style="border: 0.15rem solid black; border-radius: 1rem;">
+        <div class="d-flex justify-content-center align-items-center flex-column bg-white p-2" style="border-radius: 1rem; border: 0.1rem solid black;">
+          <img class="img w-50" src="https://brmotorolanew.vtexassets.com/arquivos/ids/173819-800-auto?v=638830335594700000&width=800&height=auto&aspect=true" alt="Motorola">
+          <span>Motorola</span>
+        </div>
+      </div>
+      <div class="col-3 d-flex justify-content-center align-items-center flex-column p-3 bg-primary product-card" style="border: 0.15rem solid black; border-radius: 1rem;">
+        <div class="d-flex justify-content-center align-items-center flex-column bg-white p-2" style="border-radius: 1rem; border: 0.1rem solid black;">
+          <img class="img w-50" src="https://americanas.vtexassets.com/arquivos/ids/35831163/Apple-iPhone-15-128GB-Preto.jpg?v=638901886307630000" alt="iPhone">
+          <span>Iphone</span>
+        </div>
+      </div>
+      <div class="col-3 d-flex justify-content-center align-items-center flex-column p-3 bg-primary product-card" style="border: 0.15rem solid black; border-radius: 1rem;">
+        <div class="d-flex justify-content-center align-items-center flex-column bg-white p-2" style="border-radius: 1rem; border: 0.1rem solid black;">
+          <img class="img w-50" src="https://images.tcdn.com.br/img/img_prod/789576/smartphone_nokia_c21_plus_dual_64gb_nk097_azul_1567434_1_6f83a2105585be61516430658552cb2e.png" alt="Nokia">
+          <span>Nokia</span>
+        </div>
+      </div> 
+    </div> 
+  </main>
 
-        foreach ($products as $product) {
-            $name = htmlspecialchars($product['name']);
-            $image = htmlspecialchars($product['image']);
-            $priceText = htmlspecialchars($product['priceText']);
-            $category = htmlspecialchars($product['category']);
+  <footer class="bg-primary p-4 mt-auto"></footer>
 
-            echo "
-            <div class='col-3 m-5 text-center shadow product-box all'>
-                <div class='row'>
-                    <img src='{$image}' alt='{$name}' class='w-100 bg-light col-12 product-box-img imgProduct'>
-                    <span class='h6 col-12 d-flex justify-content-start m-3 nameProduct'>{$name}</span>
-                    <div class='col-12 d-flex justify-content-center'></div>
-                    <span class='col-6 d-flex m-3 priceProduct'><strong>{$priceText}</strong></span>
-                </div>
-            </div>
-            ";
-        }
-        ?>
-
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/a0cfbec9a7.js" crossorigin="anonymous"></script>
-    </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+  <script src="https://kit.fontawesome.com/a0cfbec9a7.js" crossorigin="anonymous"></script>
+</body>
 </html>
