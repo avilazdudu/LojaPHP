@@ -1,5 +1,6 @@
 <?php
 include_once 'conexaodb.php';
+$categoria = $_GET['cat'];
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +27,14 @@ include_once 'conexaodb.php';
     <div class="row w-100 d-flex justify-content-around align-items-center">
       <?php
       //Comando SQl para trazer tudo dos produtos
-      $sql = 'SELECT * FROM categorias;';
+      $sql = 'SELECT * FROM categorias WHERE CategoriaID = '.$categoria.';';
 
       // Executar comando no banco
       $resultado = mysqli_query($conexao, $sql);
 
       if (mysqli_num_rows($resultado) > 0) {
         while($linha = mysqli_fetch_assoc($resultado)) {
-        echo '<a href="produtos.php" class="col-3 text-dark h-100 d-flex justify-content-center align-items-center flex-column p-3 bg-primary product-card" style="border: 0.15rem solid black; border-radius: 1rem;"> 
+        echo '<a href="produtos.php?cat='.$linha['CategoriaID'].'" class="col-3 text-dark h-100 d-flex justify-content-center align-items-center flex-column p-3 bg-primary product-card" style="border: 0.15rem solid black; border-radius: 1rem;"> 
                 <div class="d-flex h-100 w-100 justify-content-center align-items-center flex-column bg-white p-3" style="border-radius: 1rem; border: 0.1rem solid black;">
                   <span class="h6 text-center mt-2">'. $linha['Nome'].'</span>
                 </div>
