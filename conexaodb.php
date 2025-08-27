@@ -7,6 +7,4 @@ define('DBBASE', 'loja');
 
 // Conectar com o MYSQL
 $conexao = mysqli_connect(DBHOST, DBUSER, DBPASS, DBBASE);
-
-
 ?>
