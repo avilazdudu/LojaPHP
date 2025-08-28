@@ -1,10 +1,8 @@
 <?php
-// Habilita a exibição de todos os erros (útil para depuração)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Sempre inclua sua conexão com o banco de dados primeiro.
 include_once 'conexaodb.php';
 
 // Inicializa a variável do produto como nula
@@ -38,41 +36,31 @@ $produto = null;
   <main class="container py-5">
     <div class="row">
       <?php
-      // --- INÍCIO: CÓDIGO PHP PARA BUSCAR DETALHES DO PRODUTO ---
-
-      // 1. Verifica se o parâmetro 'id' existe na URL e não está vazio.
       if (isset($_GET['id']) && !empty($_GET['id'])) {
           $produto_id = $_GET['id'];
 
-          // 2. Prepara a declaração SQL para buscar todos os dados do produto específico.
           $sql = 'SELECT Nome, Descricao, ImagemURL, Preco FROM produtos WHERE ProdutoID = ?';
           
           $stmt = mysqli_prepare($conexao, $sql);
 
           if ($stmt) {
-              // 3. Vincula a variável ao placeholder.
               mysqli_stmt_bind_param($stmt, 'i', $produto_id);
 
-              // 4. Executa a declaração.
               mysqli_stmt_execute($stmt);
 
-              // 5. Obtém o resultado.
               $resultado = mysqli_stmt_get_result($stmt);
 
               if ($resultado && mysqli_num_rows($resultado) > 0) {
-                  // 6. Associa o resultado a uma variável.
                   $produto = mysqli_fetch_assoc($resultado);
               }
               mysqli_stmt_close($stmt);
           }
       }
 
-      // 7. Exibe os detalhes do produto ou uma mensagem de erro.
       if ($produto) {
           $product_name = htmlspecialchars($produto['Nome']);
           $product_desc = htmlspecialchars($produto['Descricao']);
           $product_image = htmlspecialchars($produto['ImagemURL']);
-          // Formata o preço para o padrão brasileiro.
           $product_price = 'R$ ' . number_format($produto['Preco'], 2, ',', '.');
           
           echo '
@@ -98,7 +86,6 @@ $produto = null;
             </div>
           ';
       }
-      // --- FIM: CÓDIGO PHP ---
       ?>
     </div> 
   </main>
