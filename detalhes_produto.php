@@ -1,11 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include_once 'conexaodb.php';
-
-// Inicializa a variável do produto como nula
 $produto = null;
 ?>
 
@@ -15,11 +9,8 @@ $produto = null;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Detalhes do Produto - Zaffari dus Guri</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" xintegrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <!-- Font Awesome for icons -->
     <script src="https://kit.fontawesome.com/a0cfbec9a7.js" crossorigin="anonymous"></script>
-    <!-- Seu stylesheet customizado -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="container-fluid vh-100 m-0 p-0 d-flex flex-column">

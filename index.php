@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include_once 'conexaodb.php';
 ?>
 
@@ -34,7 +30,6 @@ include_once 'conexaodb.php';
       $sql = 'SELECT CategoriaID, Nome FROM categorias';
 
       // Executar comando no banco
-      // Para uma consulta simples sem input do utilizador, mysqli_query é seguro.
       $resultado = mysqli_query($conexao, $sql);
 
       if ($resultado && mysqli_num_rows($resultado) > 0) {
